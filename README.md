@@ -7,7 +7,7 @@
 
 ## Key Features
   1. Surface Scattering : Place objects on a selected mesh.
-  2. Random Variation : Jitter for position,   rotation, and scale
+  2. Random Variation : Jitter for position,   rotation, and scale.
   3. Normal Alignment : Align objects to surface slopes.
 
 ## Challenges I anticipated
