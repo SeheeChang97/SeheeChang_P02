@@ -14,3 +14,5 @@ def simple_scatter():
         x = random.uniform(-7,7)
         y = random.uniform(-7,7)
         cmds.xform(new_obj, translation=[x, 0, z])
+
+    print("finish!")
