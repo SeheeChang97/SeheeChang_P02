@@ -1,6 +1,5 @@
 import maya.cmds as cmds
 import random
-cmds.poly
 
 def simple_scatter():
     selection = cmds.ls(sl=True)
