@@ -25,12 +25,12 @@ def scatter_on_surface(target_mesh, count):
 
     for i in range(count):
         new_obj = cmds.duplicate(source_obj)[0]
-          
-        rx = random.uniform(-20, 20)
-        rz = random.uniform(-20, 20)
-
-        pos = cmds.closestPointOnMesh(target_mesh, ip=[rx, 0, rz], q=True, p=True)
         
-        cmds.xform(new_obj, t=pos)
+        rx = random.uniform(-15, 15)
+        rz = random.uniform(-15, 15)
+        
+        target_height = cmds.getAttr(f"{target_mesh}.translateY")
+        
+        cmds.xform(new_obj, t=[rx, target_height, rz])
 
     print(f"Success: {count} objects scattered on {target_mesh}!")
