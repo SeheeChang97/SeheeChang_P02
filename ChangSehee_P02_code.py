@@ -1,6 +1,30 @@
 import maya.cmds as cmds
 import random
 
+from PySide2 import QtWidgets, QtCore
+
+class ScatterToolUI(QtWidgets.QDialog):
+    def __init__(self):
+        super(ScatterToolUI, self).__init__()
+        self.setWindowTitle("Scatter Tool")
+        self.setFixedSize(300, 200)
+        self.create_widgets()
+        self.create_layout()
+
+    def create_widgets(self):
+        self.target_btn = QtWidgets.QPushButton("Set Target Surface")
+        self.count_input = QtWidgets.QSpinBox()
+        self.count_input.setValue(10)
+        self.apply_btn = QtWidgets.QPushButton("Scatter.")
+
+    def create_layout(self):
+        layout = QtWidgets.QVBoxLayout()
+        layout.addWidget(self.target_btn)
+        layout.addWidget(QtWidgets.QLabel("Object Count:"))
+        layout.addWidget(self.count_input)
+        layout.addWidget(self.apply_btn)
+        self.setLayout(layout)
+
 def simple_scatter():
     selection = cmds.ls(sl=True)
     if not selection:
@@ -44,3 +68,4 @@ def scatter_on_surface(target_mesh, count):
         apply_variation(new_obj)
 
     print(f"Success: {count} objects scattered on {target_mesh}!")
+
