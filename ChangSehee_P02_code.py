@@ -40,5 +40,7 @@ def scatter_on_surface(target_mesh, count):
         target_height = cmds.getAttr(f"{target_mesh}.translateY")
         
         cmds.xform(new_obj, t=[rx, target_height, rz])
+        
+        apply_variation(new_obj)
 
     print(f"Success: {count} objects scattered on {target_mesh}!")
