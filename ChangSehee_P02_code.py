@@ -24,6 +24,29 @@ class ScatterToolUI(QtWidgets.QDialog):
         layout.addWidget(self.count_input)
         layout.addWidget(self.apply_btn)
         self.setLayout(layout)
+       
+    def connect_signals(self):
+
+        self.target_btn.clicked.connect(self.set_target)
+        self.apply_btn.clicked.connect(self.do_scatter)
+
+    def set_target(self):
+       
+        sel = cmds.ls(sl=True)
+        if sel:
+            self.target_mesh_name = sel[0]
+            self.target_btn.setText(f"Target: {self.target_mesh_name}")
+        else:
+            cmds.warning("Please select a surface mesh first!")
+
+    def do_scatter(self):
+        
+        count = self.count_input.value()
+        
+        if self.target_mesh_name:           
+            scatter_on_surface(self.target_mesh_name, count)
+        else:
+            cmds.warning("You must set a Target Surface first!")
 
 def simple_scatter():
     selection = cmds.ls(sl=True)
