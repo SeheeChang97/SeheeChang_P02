@@ -8,8 +8,11 @@ class ScatterToolUI(QtWidgets.QDialog):
         super(ScatterToolUI, self).__init__()
         self.setWindowTitle("Scatter Tool")
         self.setFixedSize(300, 200)
+        
+        self.target_mesh_name = ""         
         self.create_widgets()
         self.create_layout()
+        self.connect_signals()
 
     def create_widgets(self):
         self.target_btn = QtWidgets.QPushButton("Set Target Surface")
