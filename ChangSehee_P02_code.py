@@ -95,3 +95,10 @@ def scatter_on_surface(target_mesh, count):
 
     print(f"Success: {count} objects scattered on {target_mesh}!")
 
+try:
+    my_tool.close() 
+except:
+    pass
+
+my_tool = ScatterToolUI()
+my_tool.show()
