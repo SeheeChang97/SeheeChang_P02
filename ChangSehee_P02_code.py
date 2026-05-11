@@ -1,7 +1,10 @@
 import maya.cmds as cmds
 import random
 
-from PySide2 import QtWidgets, QtCore
+try:
+    from PySide6 import QtWidgets, QtCore
+except ImportError:
+    from PySide2 import QtWidgets, QtCore
 
 class ScatterToolUI(QtWidgets.QDialog):
     def __init__(self):
