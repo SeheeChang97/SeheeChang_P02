@@ -6,7 +6,7 @@
  https://github.com/SeheeChang97/SeheeChang_P02.git
 
 ## Overview
-  A Python,PySide utility for Maya that scattered objects onto target surfaces with controlled density, normal alignment, and transformation variation.
+  A Python and PySide6 utility for Maya that scatters objects onto a selected target mesh with controlled density and transformation variation. 
 
 ## Key Features
   1. Surface Scattering : Place objects on a selected mesh.
