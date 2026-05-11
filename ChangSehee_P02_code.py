@@ -85,8 +85,7 @@ def simple_scatter():
         z = random.uniform(-7,7)
         cmds.xform(new_obj, translation=[x, 0, z])
     
-def apply_variation(obj):  
-    
+def apply_variation(obj):      
     rot_y = random.uniform(0, 360)
     cmds.setAttr(f"{obj}.rotateY", rot_y)    
 
